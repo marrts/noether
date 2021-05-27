@@ -24,11 +24,11 @@
 vtkSmartPointer<vtkPolyData> loadTempMesh()
 {
   vtkSmartPointer<vtkPolyData> polydata;
-  vtkSmartPointer<vtkPLYReader> reader = vtkSmartPointer<vtkPLYReader>::New ();
-  reader->SetFileName ("/tmp/test_mesh.ply");
-  reader->Update ();
-  polydata = reader->GetOutput ();
-  printf("Loaded /tmp/test_mesh.ply with %ld points/vertices.\n", polydata->GetNumberOfPoints ());
+  vtkSmartPointer<vtkPLYReader> reader = vtkSmartPointer<vtkPLYReader>::New();
+  reader->SetFileName("/tmp/test_mesh.ply");
+  reader->Update();
+  polydata = reader->GetOutput();
+  printf("Loaded /tmp/test_mesh.ply with %ld points/vertices.\n", polydata->GetNumberOfPoints());
   return polydata;
 }
 
@@ -268,7 +268,7 @@ void runTestCaseRansac(tool_path_planner::PathGenerator& planner, vtkSmartPointe
 void runExtraRasterTest(tool_path_planner::PathGenerator& planner,
                         tool_path_planner::PathGenerator& planner_with_extras,
                         vtkSmartPointer<vtkPolyData> mesh,
-			double scale = 1.0)
+                        double scale = 1.0)
 {
   // Set input mesh
   planner.setInput(mesh);
