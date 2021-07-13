@@ -134,13 +134,6 @@ ToolPaths reverseOddRasters(const ToolPaths& tool_paths, RasterStyle raster_styl
 
 double computeOffsetSign(const ToolPathSegment& adjusted_segment, const ToolPathSegment& away_from_segment);
 
-/**
- * @brief Appends an interleaved set tool_paths to the provided tool_paths
- * @param tool_paths The input trajectory to interleave
- * @param raster_spacing
- */
-void InterleavePoseTraj(noether_msgs::ToolPaths& tool_paths, double raster_spacing);
-
 }  // namespace tool_path_planner
 
 #endif /* INCLUDE_TOOL_PATH_PLANNER_UTILITIES_H_ */
