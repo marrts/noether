@@ -30,10 +30,10 @@ namespace noether
 class PlaneSlicerRasterPlanner : public RasterPlanner
 {
 public:
-  PlaneSlicerRasterPlanner(std::unique_ptr<DirectionGenerator> dir_gen, std::unique_ptr<OriginGenerator> origin_gen);
+  PlaneSlicerRasterPlanner(DirectionGenerator::ConstPtr dir_gen, OriginGenerator::ConstPtr origin_gen);
 
-  void setSearchRadius(const double& search_radius);
-  void setMinSegmentSize(const double& min_segment_size);
+  void setSearchRadius(const double search_radius);
+  void setMinSegmentSize(const double min_segment_size);
 
 protected:
   /**
