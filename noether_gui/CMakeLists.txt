@@ -62,8 +62,7 @@ target_code_coverage(${PROJECT_NAME} INTERFACE ALL ENABLE ${NOETHER_ENABLE_TESTI
 add_library(${PROJECT_NAME}_plugins SHARED
   src/plugins.cpp)
 target_link_libraries(${PROJECT_NAME}_plugins PUBLIC ${PROJECT_NAME} Qt5::Widgets)
-target_compile_definitions(${PROJECT_NAME}_plugins PRIVATE PLUGIN_DIR="${CMAKE_INSTALL_PREFIX}/lib"
-                                                           PLUGINS="${PROJECT_NAME}_plugins")
+target_compile_definitions(${PROJECT_NAME}_plugins PRIVATE PLUGINS="${PROJECT_NAME}_plugins")
 target_cxx_version(${PROJECT_NAME}_plugins PUBLIC VERSION 14)
 target_clang_tidy(${PROJECT_NAME}_plugins
   ENABLE ${NOETHER_ENABLE_CLANG_TIDY}
@@ -74,8 +73,7 @@ target_code_coverage(${PROJECT_NAME}_plugins INTERFACE ALL ENABLE ${NOETHER_ENAB
 # TPP Application
 add_executable(${PROJECT_NAME}_app src/tpp_app.cpp)
 target_link_libraries(${PROJECT_NAME}_app PRIVATE ${PROJECT_NAME})
-target_compile_definitions(${PROJECT_NAME}_app PRIVATE PLUGIN_DIR="${CMAKE_INSTALL_PREFIX}/lib"
-                                                       PLUGINS="${PROJECT_NAME}_plugins")
+target_compile_definitions(${PROJECT_NAME}_app PRIVATE PLUGINS="${PROJECT_NAME}_plugins")
 
 # Install headers
 install(DIRECTORY include/${PROJECT_NAME}/ DESTINATION include/${PROJECT_NAME})

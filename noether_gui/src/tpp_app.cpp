@@ -14,7 +14,6 @@ int main(int argc, char** argv)
   signal(SIGTERM, handleSignal);
 
   plugin_loader::PluginLoader loader;
-  loader.search_paths.insert(PLUGIN_DIR);
   loader.search_libraries.insert(PLUGINS);
 
   noether::TPPWidget w(std::move(loader));

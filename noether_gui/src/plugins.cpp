@@ -54,7 +54,6 @@ struct PlaneSlicerRasterPlannerWidgetPlugin : ToolPathPlannerWidgetPlugin
   QWidget* create(QWidget* parent = nullptr) const override final
   {
     plugin_loader::PluginLoader loader;
-    loader.search_paths.insert(PLUGIN_DIR);
     loader.search_libraries.insert(PLUGINS);
     return new PlaneSlicerRasterPlannerWidget(std::move(loader), parent);
   }
