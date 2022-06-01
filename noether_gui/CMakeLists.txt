@@ -26,6 +26,7 @@ qt5_wrap_cpp(${PROJECT_NAME}_widget_mocs
 
 qt5_wrap_ui(${PROJECT_NAME}_widget_ui_mocs
   ui/vector3d_editor_widget.ui
+  ui/plugin_loader_widget.ui
   ui/raster_planner_widget.ui
   ui/tpp_pipeline_widget.ui
   ui/tpp_widget.ui)
@@ -37,6 +38,7 @@ add_library(${PROJECT_NAME} SHARED
   src/plugin_interface.cpp
   # Widgets
   src/widgets/collapsible_area_widget.cpp
+  src/widgets/plugin_loader_widget.cpp
   src/widgets/tool_path_modifier_widgets.cpp
   src/widgets/direction_generator_widgets.cpp
   src/widgets/origin_generator_widgets.cpp

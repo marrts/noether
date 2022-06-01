@@ -19,4 +19,4 @@ private:
   QDoubleSpinBox* min_segment_size_;
 };
 
-} // namespace noether
+}  // namespace noether

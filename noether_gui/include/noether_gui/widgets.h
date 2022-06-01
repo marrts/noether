@@ -8,6 +8,7 @@ class ToolPathPlanner;
 class ToolPathModifier;
 class DirectionGenerator;
 class OriginGenerator;
+class MeshModifier;
 
 template <typename T>
 class BaseWidget : public QWidget
@@ -22,5 +23,6 @@ using ToolPathPlannerWidget = BaseWidget<ToolPathPlanner>;
 using DirectionGeneratorWidget = BaseWidget<DirectionGenerator>;
 using OriginGeneratorWidget = BaseWidget<OriginGenerator>;
 using ToolPathModifierWidget = BaseWidget<ToolPathModifier>;
+using MeshModifierWidget = BaseWidget<MeshModifier>;
 
 }  // namespace noether

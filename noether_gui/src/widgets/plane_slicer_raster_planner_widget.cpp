@@ -55,4 +55,4 @@ ToolPathPlanner::ConstPtr PlaneSlicerRasterPlannerWidget::create() const
   return planner;
 }
 
-} // namespace noether
+}  // namespace noether

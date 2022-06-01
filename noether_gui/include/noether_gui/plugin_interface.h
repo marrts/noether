@@ -31,6 +31,7 @@ using ToolPathPlannerWidgetPlugin = WidgetPlugin<ToolPathPlannerWidget>;
 using DirectionGeneratorWidgetPlugin = WidgetPlugin<DirectionGeneratorWidget>;
 using OriginGeneratorWidgetPlugin = WidgetPlugin<OriginGeneratorWidget>;
 using ToolPathModifierWidgetPlugin = WidgetPlugin<ToolPathModifierWidget>;
+using MeshModifierWidgetPlugin = WidgetPlugin<MeshModifierWidget>;
 
 }  // namespace noether
 
@@ -39,3 +40,4 @@ using ToolPathModifierWidgetPlugin = WidgetPlugin<ToolPathModifierWidget>;
 #define EXPORT_DIRECTION_GENERATOR_WIDGET_PLUGIN(DERIVED_CLASS, ALIAS) EXPORT_CLASS_SECTIONED(DERIVED_CLASS, ALIAS, dg)
 #define EXPORT_ORIGIN_GENERATOR_PLUGIN(DERIVED_CLASS, ALIAS) EXPORT_CLASS_SECTIONED(DERIVED_CLASS, ALIAS, og)
 #define EXPORT_TOOL_PATH_MODIFIER_WIDGET_PLUGIN(DERIVED_CLASS, ALIAS) EXPORT_CLASS_SECTIONED(DERIVED_CLASS, ALIAS, mod)
+#define EXPORT_MESH_MODIFIER_WIDGET_PLUGIN(DERIVED_CLASS, ALIAS) EXPORT_CLASS_SECTIONED(DERIVED_CLASS, ALIAS, mesh)
