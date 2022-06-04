@@ -14,7 +14,7 @@ int main(int argc, char** argv)
   signal(SIGTERM, handleSignal);
 
   plugin_loader::PluginLoader loader;
-  loader.search_libraries.insert(PLUGINS);
+  loader.search_libraries.insert(NOETHER_GUI_PLUGINS);
 
   noether::TPPWidget w(std::move(loader));
   w.show();

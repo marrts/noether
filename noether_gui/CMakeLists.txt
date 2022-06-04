@@ -53,6 +53,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
   "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
   "$<INSTALL_INTERFACE:include>")
 target_link_libraries(${PROJECT_NAME} PUBLIC noether::noether_tpp Qt5::Widgets ${PCL_LIBRARIES} plugin_loader::plugin_loader Eigen3::Eigen)
+target_compile_definitions(${PROJECT_NAME} PUBLIC NOETHER_GUI_PLUGINS="${PROJECT_NAME}_plugins")
 target_cxx_version(${PROJECT_NAME} PUBLIC VERSION 14)
 target_clang_tidy(${PROJECT_NAME}
   ENABLE ${NOETHER_ENABLE_CLANG_TIDY}
@@ -64,7 +65,7 @@ target_code_coverage(${PROJECT_NAME} INTERFACE ALL ENABLE ${NOETHER_ENABLE_TESTI
 add_library(${PROJECT_NAME}_plugins SHARED
   src/plugins.cpp)
 target_link_libraries(${PROJECT_NAME}_plugins PUBLIC ${PROJECT_NAME} Qt5::Widgets)
-target_compile_definitions(${PROJECT_NAME}_plugins PRIVATE PLUGINS="${PROJECT_NAME}_plugins")
+target_compile_definitions(${PROJECT_NAME}_plugins PRIVATE NOETHER_GUI_PLUGINS="${PROJECT_NAME}_plugins")
 target_cxx_version(${PROJECT_NAME}_plugins PUBLIC VERSION 14)
 target_clang_tidy(${PROJECT_NAME}_plugins
   ENABLE ${NOETHER_ENABLE_CLANG_TIDY}
@@ -75,7 +76,7 @@ target_code_coverage(${PROJECT_NAME}_plugins INTERFACE ALL ENABLE ${NOETHER_ENAB
 # TPP Application
 add_executable(${PROJECT_NAME}_app src/tpp_app.cpp)
 target_link_libraries(${PROJECT_NAME}_app PRIVATE ${PROJECT_NAME})
-target_compile_definitions(${PROJECT_NAME}_app PRIVATE PLUGINS="${PROJECT_NAME}_plugins")
+target_compile_definitions(${PROJECT_NAME}_app PRIVATE NOETHER_GUI_PLUGINS="${PROJECT_NAME}_plugins")
 
 # Install headers
 install(DIRECTORY include/${PROJECT_NAME}/ DESTINATION include/${PROJECT_NAME})
