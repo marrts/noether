@@ -159,4 +159,4 @@ if(${ENABLE_TESTS})
 endif()
 
 # Configure package
-configure_package(NAMESPACE noether_filtering TARGETS ${PACKAGE_LIBRARIES})
+configure_package(NAMESPACE noether TARGETS ${PACKAGE_LIBRARIES})
