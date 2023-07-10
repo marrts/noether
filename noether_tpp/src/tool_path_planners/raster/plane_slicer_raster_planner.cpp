@@ -535,7 +535,7 @@ ToolPaths PlaneSlicerRasterPlanner::planImpl(const pcl::PolygonMesh& mesh) const
 
     // collecting raster segments based on min hole size
     vtkSmartPointer<vtkPolyData> raster_lines = raster_data->GetInput(i);
-    vtkIdType* indices;
+    const vtkIdType* indices;
     vtkIdType num_points;
     vtkIdType num_lines = raster_lines->GetNumberOfLines();
     vtkCellArray* cells = raster_lines->GetLines();
