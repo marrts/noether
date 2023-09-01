@@ -3,7 +3,7 @@
 #include <noether_tpp/core/types.h>
 #include <QWidget>
 
-class QVTKWidget;
+class QVTKOpenGLNativeWidget;
 class vtkActor;
 class vtkPolyDataMapper;
 class vtkProp;
@@ -57,7 +57,7 @@ private:
   TPPPipelineWidget* pipeline_widget_;
 
   // Viewer rendering
-  QVTKWidget* render_widget_;
+  QVTKOpenGLNativeWidget* render_widget_;
   vtkRenderer* renderer_;
   vtkPolyDataMapper* mesh_mapper_;
   vtkActor* mesh_actor_;
