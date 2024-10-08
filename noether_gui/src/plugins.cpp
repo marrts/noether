@@ -36,6 +36,7 @@
 #include <noether_gui/widgets/mesh_modifiers/euclidean_clustering_modifier_widget.h>
 #include <noether_gui/widgets/mesh_modifiers/normal_estimation_pcl_widget.h>
 #include <noether_gui/widgets/mesh_modifiers/normals_from_mesh_faces_modifier_widget.h>
+#include <noether_gui/widgets/mesh_modifiers/upsampling_modifier_widget.h>
 
 #include <QWidget>
 #include <QMessageBox>
@@ -167,6 +168,7 @@ using NormalEstimationPCLMeshModifierWidgetPlugin =
     WidgetPluginImpl<NormalEstimationPCLMeshModifierWidget, MeshModifierWidget>;
 using NormalsFromMeshFacesMeshModifierWidgetPlugin =
     WidgetPluginImpl<NormalsFromMeshFacesMeshModifierWidget, MeshModifierWidget>;
+using UpsamplingModifierWidgetPlugin = WidgetPluginImpl<UpsamplingMeshModifierWidget, MeshModifierWidget>;
 
 }  // namespace noether
 
@@ -208,3 +210,4 @@ EXPORT_MESH_MODIFIER_WIDGET_PLUGIN(noether::PlaneProjectionMeshModifierWidgetPlu
 EXPORT_MESH_MODIFIER_WIDGET_PLUGIN(noether::EuclideanClusteringMeshModifierWidgetPlugin, EuclideanClusteringModifier)
 EXPORT_MESH_MODIFIER_WIDGET_PLUGIN(noether::NormalEstimationPCLMeshModifierWidgetPlugin, NormalEstimationPCL)
 EXPORT_MESH_MODIFIER_WIDGET_PLUGIN(noether::NormalsFromMeshFacesMeshModifierWidgetPlugin, NormalsFromMeshFaces)
+EXPORT_MESH_MODIFIER_WIDGET_PLUGIN(noether::UpsamplingModifierWidgetPlugin, UpsamplingModifier)
