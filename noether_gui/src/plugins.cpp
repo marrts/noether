@@ -37,6 +37,7 @@
 #include <noether_gui/widgets/mesh_modifiers/normal_estimation_pcl_widget.h>
 #include <noether_gui/widgets/mesh_modifiers/normals_from_mesh_faces_modifier_widget.h>
 #include <noether_gui/widgets/mesh_modifiers/fill_holes_modifier_widget.h>
+#include <noether_gui/widgets/mesh_modifiers/upsampling_modifier_widget.h>
 
 #include <QWidget>
 #include <QMessageBox>
@@ -169,6 +170,7 @@ using NormalEstimationPCLMeshModifierWidgetPlugin =
 using NormalsFromMeshFacesMeshModifierWidgetPlugin =
     WidgetPluginImpl<NormalsFromMeshFacesMeshModifierWidget, MeshModifierWidget>;
 using FillHolesModifierWidgetPlugin = WidgetPluginImpl<FillHolesModifierWidget, MeshModifierWidget>;
+using UpsamplingModifierWidgetPlugin = WidgetPluginImpl<UpsamplingMeshModifierWidget, MeshModifierWidget>;
 
 }  // namespace noether
 
@@ -211,3 +213,4 @@ EXPORT_MESH_MODIFIER_WIDGET_PLUGIN(noether::EuclideanClusteringMeshModifierWidge
 EXPORT_MESH_MODIFIER_WIDGET_PLUGIN(noether::NormalEstimationPCLMeshModifierWidgetPlugin, NormalEstimationPCL)
 EXPORT_MESH_MODIFIER_WIDGET_PLUGIN(noether::NormalsFromMeshFacesMeshModifierWidgetPlugin, NormalsFromMeshFaces)
 EXPORT_MESH_MODIFIER_WIDGET_PLUGIN(noether::FillHolesModifierWidgetPlugin, FillHoles)
+EXPORT_MESH_MODIFIER_WIDGET_PLUGIN(noether::UpsamplingModifierWidgetPlugin, UpsamplingModifier)
